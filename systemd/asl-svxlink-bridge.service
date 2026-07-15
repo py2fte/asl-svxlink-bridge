@@ -1,0 +1,17 @@
+[Unit]
+Description=ASL3 to SVXLink Reflector Bridge
+After=network-online.target asterisk.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=asl
+Group=asl
+WorkingDirectory=/opt/asl-svxlink-bridge
+ExecStart=/usr/bin/node /opt/asl-svxlink-bridge/src/index.js --config /etc/asl-svxlink-bridge/config.json
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,79 @@
+{
+  "nodeName": "ASL3-BRIDGE",
+  "reflector": {
+    "host": "reflector.example.org",
+    "tcpPort": 5300,
+    "udpPort": 5300,
+    "callsign": "N0CALL-R",
+    "authKey": "change-me",
+    "clientName": "asl-svxlink-bridge",
+    "clientVersion": "0.1.0",
+    "talkgroup": 10,
+    "monitorTalkgroups": [10],
+    "txTimeoutMs": 180000,
+    "heartbeatIntervalMs": 5000,
+    "autoReconnect": true,
+    "reconnectInitialMs": 9000,
+    "reconnectMaxMs": 30000
+  },
+  "asterisk": {
+    "mode": "usrp",
+    "localRtpHost": "0.0.0.0",
+    "localRtpPort": 41000,
+    "rtpAdvertiseHost": "192.0.2.10",
+    "remoteRtpHost": null,
+    "remoteRtpPort": null,
+    "learnRemoteFromIncoming": true,
+    "payloadType": 0,
+    "packetMs": 20,
+    "rtpMaxQueuePackets": 200,
+    "pttStartDtmf": "*99",
+    "pttStopDtmf": "#",
+    "pttHangMs": 700,
+    "pttOpenDelayMs": 250,
+    "pttTestDelayMs": 15000,
+    "asteriskToReflectorDelayMs": 15000,
+    "svxPttHangMs": 2500,
+    "svxVoiceThreshold": 200,
+    "svxPttRefreshMs": 10000,
+    "usrp": {
+      "localHost": "0.0.0.0",
+      "localPort": 5101,
+      "remoteHost": "192.0.2.20",
+      "remotePort": 5001,
+      "talkgroup": 0,
+      "autoReconnect": true,
+      "reconnectDelayMs": 1000
+    },
+    "sip": {
+      "enabled": false,
+      "serverHost": "192.0.2.20",
+      "serverPort": 5060,
+      "localHost": "0.0.0.0",
+      "localPort": 5070,
+      "advertiseHost": "192.0.2.10",
+      "username": "svxbridge",
+      "password": "change-me",
+      "domain": "192.0.2.20",
+      "displayName": "ASL SVX Bridge",
+      "registerExpires": 300,
+      "autoAnswer": true,
+      "autoConnectNode": "1801"
+    }
+  },
+  "audio": {
+    "sampleRate": 8000,
+    "channels": 1,
+    "reflectorFrameMs": 20,
+    "opusBackend": "libopus",
+    "opusBitrate": 20000
+  },
+  "audioMonitor": {
+    "enabled": true,
+    "host": "127.0.0.1",
+    "port": 8090
+  },
+  "logging": {
+    "level": "info"
+  }
+}

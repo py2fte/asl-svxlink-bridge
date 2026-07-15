@@ -1,0 +1,13 @@
+node_modules/
+backups/
+
+# Local runtime configuration may contain callsigns, keys, passwords, and LAN IPs.
+config.json
+*.local.json
+.env
+.env.*
+
+# Logs and temporary files
+*.log
+*.tmp
+npm-debug.log*
